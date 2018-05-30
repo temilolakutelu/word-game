@@ -1,0 +1,96 @@
+
+#container{
+    width: 800px;
+    height: 600px;
+    border: 1px solid;
+    margin: 30px 0 0 200px;
+    border-radius: 40px;
+    background-color: rgba(160, 102, 31, 0.5);
+}#title{
+    text-transform: uppercase;
+    background-color: bisque;
+    width: 200px;
+    height: 40px;
+    border: 1px solid;
+    margin: 10px 0 0 300px;
+    text-align: center;
+    font-size: 30px;
+}
+#main{
+    display:flex;
+   
+   }
+#guide{
+    width: 150px;
+    height: 300px;
+    border: 1px solid;
+    background-color: bisque;
+    margin-left: 30px;
+    border-radius: 10px;
+}
+#genWord {
+    width: 200px;
+    height: 60px;
+    font-size: 30px;
+    border: 1px solid #808080;
+    margin-top: 60px;
+    margin-left: 60px;
+    margin-right: 150px;
+    background-color: bisque;
+    text-align: center;
+    color: goldenrod;
+}
+#output {
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 500px;
+    height: 250px;
+    border: 1px solid #808080;
+    color: goldenrod;
+    background-color: bisque;
+}
+
+#threeletter {
+    width: 400px;
+    height: 60px;
+    border: 1px solid #808080;
+    margin-top: 20px;
+    margin-left:40px;
+    display: flex;
+    background-color: rgba(75, 57, 37, 0.5);
+}
+
+
+
+#fourletter {
+    width: 400px;
+    height: 60px;
+    border: 1px solid #808080;
+    margin-top: 20px;
+    margin-left:40px;
+    display: flex;
+    background-color: rgba(75, 57, 37, 0.5);
+}
+
+#fiveletter {
+    width: 400px;
+    height: 60px;
+    border: 1px solid #808080;
+    margin-top: 20px;
+    margin-left:40px;
+    background-color: rgba(75, 57, 37, 0.5);
+}
+#myForm{
+    margin-top: 40px;
+    margin-left:80px;
+}
+#myInput{
+    height: 30px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px gold, -2px -2px 8px gold;
+}
+button:hover,
+button:focus{
+    background-color: rgb(154, 115, 216);
+    color:whitesmoke;
+}
