@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #genWord {
+            width: 120px;
+            height: 40px;
+            font-size: 30px;
+            border: 1px solid #808080;
+        }
+
+        #output {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #808080;
+        }
+
+        #threeletter {
+            width: auto;
+            height: 60px;
+            border: 1px solid #808080;
+            display: flex;
+        }
+
+
+
+        #fourletter {
+            width: auto;
+            height: 60px;
+            border: 1px solid #808080;
+            margin-top: 20px;
+            display: flex;
+        }
+
+        #fiveletter {
+            width: auto;
+            height: 60px;
+            border: 1px solid #808080;
+            display: flex;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="genWord">
+
+    </div>
+    <p id="count"></p>
+    <form id="myForm" action="">
+        <input type="text" placeholder="enter word" id="myInput">
+    </form>
+    <button type="submit" onclick="myFunc()">enter</button>
+    <div id="output">
+        <div id="threeletter">1</div>
+        <div id="fourletter">2</div>
+        <div id="fiveletter">3</div>
+        <div id="errorAlert" style="visibility: hidden">
+            <p>
+                Wrong word
+                <br/> Try again!!
+            </p>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script>
+        var words = [{ name: "physics", words: ["shy", "sip"] },
+        { name: "navigator", words: ["nav", "aviator"] },
+        { name: "language", words: ["age", "lang"] }];
+        var randNum = Math.floor(Math.random() * 3);
+        var chosenWord = words[randNum];
+        console.log(chosenWord);
+
+        for (let i = 0; i < chosenWord.name.length; i++) {
+            var myWord = document.getElementById("genWord");
+
+            var myWordText = document.createTextNode(chosenWord.name[i]);
+            myWord.appendChild(myWordText);
+            var count = chosenWord.words.length;
+            document.getElementById("count").innerText = "Number of words expected:" + count;
+        }
+        var childWord = [];
+        duration();
+        function myFunc() {
+            var copyText = document.getElementById("myInput");
+            copyText.select();
+            document.execCommand("copy");
+            var answer = copyText.value;
+            console.log(answer);
+
+
+            for (let i = 0; i < chosenWord.words.length; i++) {
+
+                if (answer == chosenWord.words[i] && answer.length == 3) {
+                    childWord.push(answer);
+                    console.log(childWord);
+                    var paste = document.createElement('div');
+                    paste.style.width = "30px";
+                    paste.style.height = "20px";
+                    paste.style.border = "1px solid gray";
+                    paste.style.margin = "5px 0 0 5px";
+                    var pasteText = document.createTextNode(answer);
+                    paste.appendChild(pasteText);
+                    document.getElementById("threeletter").appendChild(paste);
+                }
+                else if (answer == chosenWord.words[i] && answer.length == 4) {
+                    var paste = document.createElement('div');
+                    paste.style.width = "40px";
+                    paste.style.height = "20px";
+                    paste.style.border = "1px solid gray";
+                    paste.style.margin = "5px 0 0 5px";
+                    var pasteText = document.createTextNode(answer);
+                    paste.appendChild(pasteText);
+                    document.getElementById("fourletter").appendChild(paste);
+                }
+                else if (answer == chosenWord.words[i] && answer.length == 5) {
+                    var paste = document.createElement('div');
+                    paste.style.width = "50px";
+                    paste.style.height = "20px";
+                    paste.style.border = "1px solid gray";
+                    paste.style.margin = "5px 0 0 5px";
+                    var pasteText = document.createTextNode(answer);
+                    paste.appendChild(pasteText);
+                    document.getElementById("fiveletter").appendChild(paste);
+                }
+
+                // else {
+                //     document.getElementById("errorAlert").style.visibility="visible";
+                // }
+            }
+            document.getElementById("myForm").reset();
+        }
+        function duration() {
+            if (childWord == count) {
+                var close = document.createElement('p');
+                close = "Congrats you did it!!!";
+                document.getElementById("footer").appendChild(close);
+                location.reload();
+            }
+        }
+
+    </script>
+</body>
+
+</html>

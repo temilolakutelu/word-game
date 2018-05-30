@@ -31,20 +31,19 @@ window.onload = function () {
         for (let i = 0; i < chosenWord.value.length; i++) {
 
             if (answer == chosenWord.value[i] && answer.length == 3) {
+                tracker();
                 var paste = document.createElement('div');
                 paste.style.width = "30px";
                 paste.style.height = "20px";
                 paste.style.border = "1px solid gray";
-                paste.style.backgroundColor = "green";
                 paste.style.margin = "5px 0 0 5px";
                 var pasteText = document.createTextNode(answer);
                 paste.appendChild(pasteText);
                 document.getElementById("threeletter").appendChild(paste);
-                chosenWord.value.splice(0, chosenWord.value[i]);
-                console.log("right word " + chosenWord.value[i]);
-                console.log(chosenWord.value);
+
             }
             else if (answer == chosenWord.value[i] && answer.length == 4) {
+                tracker();
                 var paste = document.createElement('div');
                 paste.style.width = "40px";
                 paste.style.height = "20px";
@@ -55,6 +54,7 @@ window.onload = function () {
                 document.getElementById("fourletter").appendChild(paste);
             }
             else if (answer == chosenWord.value[i] && answer.length == 5) {
+                tracker();
                 var paste = document.createElement('div');
                 paste.style.width = "50px";
                 paste.style.height = "20px";
@@ -64,11 +64,19 @@ window.onload = function () {
                 paste.appendChild(pasteText);
                 document.getElementById("fiveletter").appendChild(paste);
             }
-
-
             document.getElementById("myForm").reset();
+            function tracker() {
+                var x = chosenWord.value.indexOf(chosenWord.value[i]);
+                console.log(x);
+                chosenWord.value.splice(x, 1);
+                console.log(chosenWord.value);
+            }
 
         }
+        if (chosenWord.values.length == 0) {
+
+        }
+
 
 
     });
