@@ -1,8 +1,13 @@
 body{
     background-image:url("wood-cube-abc-cube-letters-48898.jpeg");
     background-repeat: no-repeat;
-    
     background-size: 3000px;
+}
+@media screen and (max-width:600px){
+    body{
+        background-size: 1000px; 
+        display: flex;
+    }
 }
 #container{
     width: 800px;
@@ -11,32 +16,62 @@ body{
     margin: 30px 0 0 200px;
     border-radius: 50px;
     background-color: rgba(243, 205, 107,0.5);
-
-}#title{
+}
+    @media screen and (max-width:600px){
+        #container{
+            width: 300px;
+            height:500px;
+            margin:  50px 0 0 50px;
+        }
+    }
+#title{
     text-transform: uppercase;
     background-color: bisque;
     width: 300px;
     height: 40px;
     border: 1px 15px solid;
-    margin: 0px 0 0 250px;
+    margin: 5px 0 0 250px;
     text-align: center;
     font-size: 40px;
 color: goldenrod;
 }
+@media screen and (max-width:600px){
+    #title{
+        font-size: 20px;
+        width: 100px;
+        margin: 5px 0 0 100px;
+    }
+}
+
 #main{
     display:flex;
    
    }
+   @media screen and (max-width:600px){
+       #main{
+           display: block;
+       }
+       
+   }
+   
 #guide{
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    height: 300px;
     border: 1px 8px 15px solid;
     color: goldenrod;
     background-color: rgba(141, 15, 15, 0.6);
-    margin-top: 40px;
+    margin-top: 80px;
     margin-left: 20px;
     border-radius: 10px;
 }
+@media screen and (max-width:600px){
+    #guide{
+        width:200px;
+        height: 80px;
+        margin-top: 10px;
+    }
+}
+
 #genWord {
     width: 400px;
     height: 60px;
@@ -46,15 +81,33 @@ color: goldenrod;
     margin-top: 60px;
     margin-left: 60px;
     margin-right: 150px;
-  
     text-align: center;
     color: goldenrod;
+}
+@media screen and (max-width:600px){
+    #genWord div{
+        width: 3px;
+        height: 10px;
+        font-size: 10px;
+        padding: 0;0
+        margin: ;
+    }
+    #genWord{
+        width: 280px;
+        height: 30px;
+        margin: 20px 0 0 0px;
+    }
 }
 #count{
     color: rgb(128, 105, 0);
     text-align: center;
     line-height: 50px;
     margin-left: 20px;
+}
+@media screen and (max-width:600px){
+    #count{
+        font-size: 10px;
+    }
 }
 #output {
     margin-left: 30px;
@@ -67,6 +120,18 @@ color: goldenrod;
     color: rgb(114, 81, 37);
   
 }
+@media screen and (max-width:600px){
+    #output{
+        width: 250px;
+        height: 200px;
+        margin: 5px 0 0 20px;
+    }
+    #output div{
+        width: 200px;
+        height: 40px;
+        margin-left: 20px;
+    }
+}
 
 #threeletter {
     width: 400px;
@@ -77,7 +142,13 @@ color: goldenrod;
     display: flex;
     box-shadow: 1px 1px 8px goldenrod, -1px -1px 8px goldenrod;
 }
-
+@media screen and (max-width:600px){
+    .letIn div{
+width: 5px;
+height: 5px;
+font-size: 5px;
+    }
+}
 
 
 #fourletter {
@@ -118,6 +189,20 @@ input:focus{
     border-radius: 50px;
   background-color: #ecbf5c;
 }
+@media screen and (max-width:600px){
+    #myForm{
+        margin: 5px 0 0 18px;
+    }
+    #myInput{
+        height: 10px;
+        font-size: 10px;
+        width:100px;
+    }
+    #btn{
+        width:30px;
+        height: 30px;
+font-size: 5px;
+    }}
 #btn:hover,
 #btn:focus{
    background-color: rgb(95, 17, 17);
